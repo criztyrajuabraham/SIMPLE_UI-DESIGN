@@ -1,0 +1,103 @@
+
+
+{% block content %}
+ <div class="right-section">
+    <h4>Fill The Form</h4>
+
+     <form action="">  {% csrf_token %}
+
+        <div class="input-group">
+            <input type="text" id="name" name="username" required/>
+            <label for="name">Name</label>
+        </div>
+        <div class="input-group">
+            <input type="email" id="email" name="email" required/>
+            <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" name="password" required/>
+            <label for="password">Password</label>
+        </div>
+        <div class="submit-section">
+            <button type="submit" class="submit-button">Submit</button></a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+<style>
+    .right-section {
+        width: 400px;
+        background-color: aliceblue;
+        border-radius:20px ;
+        padding: 40px 20px;
+        box-shadow: 0 2px 6px rgba(117,192,224,0.5);
+    }
+    
+    .right-section h4 {
+        font-size: 20px;
+        width:300px;
+        margin: auto;
+        margin-bottom: 20px;
+        color: rgba(233, 27, 96, 0.985);
+    
+    }
+    .input-group {
+        width: 300px;
+        margin: 20px  auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    
+    }
+    
+    .input-group label {
+        color: rgb(33, 33, 33);
+        font-size: 15px;
+        position: absolute;
+        top: 10px;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .input-group input {
+        border:none;
+        padding: 7px;
+        margin-top:5px;
+        outline: none;
+        color: #212121;
+        border-bottom:1px solid #EC407A ;
+    }
+    
+    .input-group input:focus ~ label,
+    .input-group input:valid ~ label{
+        color: #D50000;
+        top:-10px;
+        font-size: 10px;
+    }
+    
+    .submit-section  {
+        text-align: center;
+    }
+    
+    .submit-button {
+        
+        background-color:#ff4f81 ;
+        color: white;
+        border:none;
+        padding:15px;
+        margin-top: 10px;
+        border-radius: 20px;
+        width:140px;
+        letter-spacing: 2px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+    
+    }
+    
+    .submit-button:hover {
+        box-shadow: 0 5px 7px  rgb(147, 96, 111);
+    }
+    
+</style>
