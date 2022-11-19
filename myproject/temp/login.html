@@ -21,9 +21,16 @@
       <h1>Login</h1>
 
         <div class="input-field">
-
-          <input type="Text" name="username" placeholder="Username" required/>
-          <input type="password" name="password" placeholder="Password" required/>
+          <div>
+            <input type="Text" name="username" placeholder="Username" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+          </div>
+          
+          <div>
+            <a href=""><p>Forgott Password</p></a>
+            
+          </div>
+         
           <div class="btn">
             <a href="{% url 'index' %}">
             <button class="box-1" type="submit">Login</button></a>
@@ -48,26 +55,30 @@ body {
     margin: 0;
     padding:0;
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(-48deg,rgba(153, 183, 236, 0.867),rgba(235, 129, 165, 0.8),rgba(234, 157, 137, 0.9));
+    filter: brightness(1.3);
+    background-size: 400% 400%;
+    animation: gradient 15s linear infinite;
    
 }
 .login-section {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(118, 161, 237,0.58),rgba(255, 95, 148, 0.8),rgba(221, 140, 119,0.9));
-    filter: brightness(1.3);
 
 }
 
 .login-form {
     width: 400px;
+    height: 430px;
     background: rgb(193, 219, 243);
     border-radius:20px ;
     padding: 20px;
-    border-radius: 25px;
+    border-radius:10% 25%;
     box-shadow: 0 2px 6px rgba(80, 93, 99, 0.933);
     position: relative;
     left: 555px;
-    top: 55px;
+    top: 70px;
+    animation: bounce 1s ease-in-out 0s 1 normal forwards;
     
   }
 
@@ -95,22 +106,40 @@ body {
 
   }
     
-  .box-1 {
-        
-    background-color:#ffa7d3cf ;
-    color: rgb(91, 67, 67);
-    border:none;
-    padding:17px;
-    padding:11px;
-    margin-top: 11px;
-    border-radius: 20px;
-    width:140px;
-    letter-spacing: 2px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    font-size: 16px;
+
+.input-field p {
+  font-size: 15px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  left:105px ;
+  top: 30px;
+
 
 }
+
+  .box-1 {
+        
+    background-color:#f88dc3cf ;
+    color: rgb(44, 35, 35);
+    border:none;
+    padding:14px;
+    padding:11px;
+    margin-top: 11px;
+    border-radius: 1% 22%;
+    width:127px;
+    letter-spacing: 2px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+
+}
+
+
+.input-field button {
+  position: relative;
+  top: 50px;
+  left: 185px;
+}
+
 
 .input-field button:hover{
 
@@ -120,6 +149,64 @@ body {
 }
 
 
-</style>
+@keyframes bounce {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
 
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+</style>
 
